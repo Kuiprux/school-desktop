@@ -1,0 +1,66 @@
+{
+  default-settings: {
+    start-time: '9:00',
+    lasting-time: '55:00',
+    rest-time: '10:00'
+  },
+  time-table: {
+    timing: {
+      default: [
+        {
+          type: 'rest',
+          class-after: 4,
+          time: '60:00'
+        }
+      ],
+      others:[
+        [],
+        [],
+        [],
+      ]
+    },
+    subjects: [
+      [],
+      ['AB1', 'CD', 'EF', 'GH', 'IJ', 'KL', 'MN'],
+      ['AB2', 'CD', 'EF', 'GH', 'IJ', 'KL', 'MN'],
+      ['AB3', 'CD', 'EF', 'GH', 'IJ', 'KL', 'MN'],
+      ['AB4', 'CD', 'EF', 'GH', 'IJ', 'KL', 'MN'],
+      ['AB5', 'CD', 'EF', 'GH', 'IJ', 'KL', 'MN'],
+      []
+    ]
+  }
+}
+
+{
+  timing: {
+    default: {
+      start-time: '9:00:00',
+      class-time: '55:00',
+      rest-time: '10:00'
+      extra: {
+        class: {
+
+        },
+        rest: [
+          '',
+          '',
+          '',
+          '',
+          '60:00'
+        ]
+      }
+    },
+    extra: [
+
+    ]
+  },
+  subjects: [
+    [],
+    ['AB1', 'CD', 'EF', 'GH', 'IJ', 'KL', 'MN'],
+    ['AB2', 'CD', 'EF', 'GH', 'IJ', 'KL', 'MN'],
+    ['AB3', 'CD', 'EF', 'GH', 'IJ', 'KL', 'MN'],
+    ['AB4', 'CD', 'EF', 'GH', 'IJ', 'KL', 'MN'],
+    ['AB5', 'CD', 'EF', 'GH', 'IJ', 'KL', 'MN'],
+    []
+  ]
+}

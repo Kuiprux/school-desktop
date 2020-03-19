@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="particles/particlesjs.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./index.js"></script>
+
+    <title>School Desktop</title>
+  </head>
+  <body>
+
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <!-- stats - count particles -->
+    <div class="count-particles hide"> <span class="js-count-particles hide">--</span> particles </div>
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="./lib/particles.min.js"></script>
+    <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script src="./particles/particlesjs.js"></script>
+
+    <div class="time-table">
+      <div class="subject-container" id="subject-container">
+        <div class="subject">국어</div>
+        <div class="subject">국어</div>
+        <div class="subject">국어</div>
+        <div class="subject">국어</div>
+        <div class="subject">국어</div>
+        <div class="subject">국어</div>
+        <div class="subject">국어</div>
+      </div>
+    </div>
+
+    <div class="date-and-time">
+      <div class="date-and-time-container">
+        <div class="time" id="time">
+          15:30
+        </div>
+        <div class="date" id="date">
+          2020년 2월 27일 (목)
+        </div>
+      </div>
+    </div>
+
+
+    <div class="details">
+      <div class="details-container">
+        <div class="detail" id="plan">
+          <div class="subdetail">D-day: 민방위 훈련</div>
+          <div class="subdetail">D-2: 체육대회</div>
+          <div class="subdetail">D-15: 아무거나</div>
+        </div>
+        <div class="detail" id="note">
+          <div class="subdetail">우유급식 신청서 제출(아침까지)</div>
+          <div class="subdetail">국어 학습지 제출(점심시간까지)</div>
+          <div class="subdetail">수학 수행평가 제출(5교시까지)</div>
+        </div>
+        <div class="detail" id="lunch">
+          급식 정보를<br />받아오는 중입니다
+        </div>
+        <div class="detail" id="dinner">
+          급식 정보를<br />받아오는 중입니다
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

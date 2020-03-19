@@ -1,0 +1,48 @@
+{
+  "timing": {
+    "default": {
+      "start-time": "9:00:00",
+      "class-time": "50:00",
+      "rest-time": "10:00",
+      "extra": {
+        "class": {
+
+        },
+        "rest": [
+          "",
+          "",
+          "",
+          "1:10:00"
+        ]
+      }
+    },
+    "extra": [
+      {},
+      {
+        "start-time": "8:00:00",
+        "class-time": "50:00",
+        "rest-time": "10:00",
+        "extra": {
+          "class": {
+
+          },
+          "rest": [
+            "",
+            "",
+            "",
+            "1:10:00"
+          ]
+        }
+      }
+    ]
+  },
+  "subjects": [
+    [],
+    ["AB1", "CD", "EF", "GH", "IJ", "KL", "MN"],
+    ["AB2", "CD", "EF"],
+    ["AB3", "CD", "EF", "GH", "IJ"],
+    ["AB4", "CD", "EF", "GH", "IJ", "KL", "MN"],
+    ["AB5", "CD", "EF", "GH", "IJ", "KL", "MN"],
+    []
+  ]
+}

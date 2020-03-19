@@ -1,0 +1,20 @@
+{
+  "name": "school-desktop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Kuiprux",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.0.1"
+  },
+  "dependencies": {
+    "charset": "^1.0.1",
+    "iconv-lite": "^0.5.1",
+    "node-html-parser": "^1.2.8",
+    "request": "^2.88.2"
+  }
+}
