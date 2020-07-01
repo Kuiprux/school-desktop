@@ -2,13 +2,19 @@ const { ipcRenderer } = require('electron');
 
 let callbacks = {};
 
-exports.requestData = function(arg, callback) {
-  callbacks[arg] = callback;
+exports.requestData = function(name, callback) {
+  console.log('reqing ' + name);
+  exports.requestDataWithArg({name: name}, callback);
+}
+
+exports.requestDataWithArg = function(arg, callback) {
+  callbacks[arg['name']] = callback;
   ipcRenderer.send('request-data', arg);
 }
 
 ipcRenderer.on('send-data', (event, arg) => {
-  callbacks[arg['name']](arg['data']);
+  console.log('resing ' + arg['name']);
+  callbacks[arg['name']]({arg: arg['arg'], data: arg['data']});
 })
 
 /*

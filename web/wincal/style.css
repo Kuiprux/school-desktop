@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap');
+
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  flex-flow: column;
+  height: 100%;
+  display: flex;
+}
+.hide {
+  display: none;
+}
+
+.time-table {
+  display: flex;
+  width: 17vw;
+  height: 100%;
+  position: fixed;
+}
+.subject-container {
+  padding: 7vh 5vw;
+  display: flex;
+  flex-grow : 1;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.subject {
+    display: flex;
+    align-items: center;
+    font-family: 'Do Hyeon';
+    color: cornflowerblue;
+    font-size: 8vh;
+    transition-duration: 1s;
+}
+.subject.selected {
+  font-size: 10vh;
+}
+
+.calendar {
+  padding: 5vh;
+  text-align: center;
+  font-family: 'Do Hyeon';
+  font-size: 7vh;
+  color: skyblue;
+}
+
+
+.right-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20vw;
+}
+.details {
+  display: flex;
+}
+.details-container {
+  padding: 3vh 3vw;
+  flex-grow : 1;
+  display: flex;
+}
+.detail {
+  color: lightblue;
+  flex-grow: 1;
+  flex-basis: 0;
+  font-family: 'Do Hyeon';
+  font-size: 4vh;
+}
+.detail .always-selected {
+  color: black;
+}
+.detail .selected {
+  color: gray;
+}

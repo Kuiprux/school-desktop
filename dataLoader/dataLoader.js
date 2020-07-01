@@ -2,19 +2,22 @@ const mainIpc = require('../mainIpc.js');
 
 const timeTableLoader = require('./timeTableLoader.js');
 const mealLoader = require('./mealLoader.js');
+const dailyLoader = require('./dailyLoader.js');
 
 
-exports.loadData = function(name) {
-  switch (name) {
+exports.loadData = function(reqData) {
+  switch (reqData['name']) {
     case 'time-table':
-      timeTableLoader.loadData();
+      timeTableLoader.loadData(reqData);
       break;
     case 'meal':
-      mealLoader.loadData();
+      mealLoader.loadData(reqData);
       break;
+    case 'daily-note':
+      dailyLoader.loadData(reqData);
   }
 }
 
-exports.onDataLoaded = function(name, data) {
-  mainIpc.sendData(name, data);
+exports.onDataLoaded = function(reqData, data) {
+  mainIpc.sendData(reqData, data);
 }

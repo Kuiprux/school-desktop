@@ -8,7 +8,7 @@ const dataLoader = require('./dataLoader.js');
 
 
 //const mealUrl = 'http://youngsaeng.hs.kr/index.jsp?SCODE=S0000000777&mnu=M001002003001';
-const mealUrl = 'http://youngsaeng.hs.kr/index.jsp?mnu=M001002003001&SCODE=S0000000777&frame=&year=2019&month=9';
+const mealUrl = 'http://youngsaeng.hs.kr/index.jsp?mnu=M001002003001&SCODE=S0000000777&frame=&year=2019&month=10';
 
 const mealOptions = {
   url: mealUrl,
@@ -18,7 +18,7 @@ const mealOptions = {
   encoding: null
 };
 
-exports.loadData = function() {
+exports.loadData = function(reqData) {
   request(mealOptions, (err, res, body) => {
     if (err) { return console.log(err); }
         //  const strContents = Buffer.from(body);
@@ -54,7 +54,7 @@ exports.loadData = function() {
     }
     //console.log(mealData.length);
     //log();
-    dataLoader.onDataLoaded('meal', mealData);
+    dataLoader.onDataLoaded(reqData, mealData);
   });
 }
 /*

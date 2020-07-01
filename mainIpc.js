@@ -4,14 +4,14 @@ const dataLoader = require('./dataLoader/dataLoader.js');
 
 let events = {};
 
-ipcMain.on('request-data', (event, arg) => {
-  console.log('request-data', arg);
-  events[arg] = event;
-  dataLoader.loadData(arg);
+ipcMain.on('request-data', (event, reqInfo) => {
+  console.log('request-data', reqInfo);
+  events[reqInfo['name']] = event;
+  dataLoader.loadData(reqInfo);
 });
 
-exports.sendData = function(name, data) {
-  events[name].sender.send('send-data', {name: name, data: data});
+exports.sendData = function(reqInfo, data) {
+  events[reqInfo['name']].sender.send('send-data', {name: reqInfo['name'], arg: reqInfo['arg'], data: data});
 }
 /*
 ipcMain.on('chnl1', (event, arg) => {

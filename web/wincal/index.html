@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../particles/particlesjs.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./index.js"></script>
+
+    <title>School Desktop</title>
+  </head>
+  <body>
+
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <!-- stats - count particles -->
+    <div class="count-particles hide"> <span class="js-count-particles hide">--</span> particles </div>
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="../lib/particles.min.js"></script>
+    <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script src="../particles/particlesjs.js"></script>
+
+    <div class="time-table">
+      <div class="subject-container" id="subject-container">
+        <div class="subject">국어</div>
+        <div class="subject">국어</div>
+        <div class="subject">국어</div>
+        <div class="subject">국어</div>
+        <div class="subject">국어</div>
+        <div class="subject">국어</div>
+        <div class="subject">국어</div>
+      </div>
+    </div>
+
+    <div class="right-wrapper">
+      <table class="calendar">
+        <tr>
+          <td>월</td> <td>화</td> <td>수</td> <td>목</td> <td>금</td> <td>토</td> <td>일</td>
+        </tr>
+        <tr>
+          <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td>1</td>
+        </tr>
+        <tr>
+          <td>2</td> <td>3</td> <td>4</td> <td>5</td> <td>6</td> <td>7</td> <td>8</td>
+        </tr>
+        <tr>
+          <td>9</td> <td>10</td> <td>11</td> <td>12</td> <td>13</td> <td>14</td> <td>15</td>
+        </tr>
+        <tr>
+          <td>16</td> <td>17</td> <td>18</td> <td>19</td> <td>20</td> <td>21</td> <td>22</td>
+        </tr>
+        <tr>
+          <td>23</td> <td>24</td> <td>25</td> <td>26</td> <td>27</td> <td>28</td> <td>29</td>
+        </tr>
+        <tr>
+          <td>30</td> <td>31</td> <td></td> <td></td> <td></td> <td></td> <td></td>
+        </tr>
+      </table>
+
+
+      <div class="details">
+        <div class="details-container">
+          <div class="detail" id="note">
+            <div class="note-line">우유급식 신청서 제출(아침까지)</div>
+            <div class="note-line">국어 학습지 제출(점심시간까지)</div>
+            <div class="note-line">수학 수행평가 제출(5교시까지)</div>
+          </div>
+          <div class="detail" id="lunch">
+            급식 정보를<br />받아오는 중입니다
+          </div>
+          <div class="detail" id="dinner">
+            급식 정보를<br />받아오는 중입니다
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

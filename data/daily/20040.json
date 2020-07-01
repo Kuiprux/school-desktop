@@ -1,0 +1,44 @@
+[
+  {},
+  {},
+  {},
+  {},
+  {
+    "time-table": {
+      "start-time": "9:00:00",
+      "class-time": "55:00",
+      "rest-time": "10:00",
+      "extra": {
+        "class": [
+          "60:00"
+        ],
+        "rest": [
+          "60:00"
+        ]
+      },
+      "subjects": ["AB1", "CD", "EF", "GH", "IJ", "KL", "MN"]
+    },
+    "note": [
+      {
+        "type": "homework",
+        "content": "수학 숙제(3교시)"
+      },
+      {
+        "type": "perf-test",
+        "start-time": "10:35:00",
+        "content": "수학 수행평가(3교시)"
+      },
+      {
+        "type": "etc",
+        "end-time": "10:35:10",
+        "content": "환경정리"
+      },
+      {
+        "type": "etc",
+        "start-time": "10:35:00",
+        "end-time": "10:35:10",
+        "content": "환경정리"
+      }
+    ]
+  }
+]

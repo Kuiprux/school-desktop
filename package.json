@@ -4,7 +4,8 @@
   "description": "",
   "main": "start.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build:win64": "electron-builder --win portable --x64"
   },
   "author": "Kuiprux",
   "license": "ISC",
@@ -16,5 +17,8 @@
     "iconv-lite": "^0.5.1",
     "node-html-parser": "^1.2.8",
     "request": "^2.88.2"
+  },
+  "build": {
+    "files": ["dataLoader", "web", "*.js"]
   }
 }

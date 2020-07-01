@@ -1,0 +1,10 @@
+directories:
+  output: dist
+  buildResources: build
+files:
+  - filter:
+      - cpp
+      - dataLoader
+      - web
+      - '*.js'
+electronVersion: 8.0.1

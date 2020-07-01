@@ -1,0 +1,18 @@
+{
+  "timing": {
+    "default": {
+      "start-time": "14:55:00",
+      "class-time": "0:5",
+      "rest-time": "0:3"
+    }
+  },
+  "subjects": [
+    [],
+    ["AB1", "CD", "EF", "GH", "IJ", "KL", "MN"],
+    ["AB1", "CD", "EF", "GH", "IJ", "KL", "MN"],
+    ["AB1", "CD", "EF", "GH", "IJ", "KL", "MN"],
+    ["AB4", "CD", "EF", "GH", "IJ", "KL", "MN"],
+    ["AB5", "CD", "EF", "GH", "IJ", "KL", "MN"],
+    []
+  ]
+}
