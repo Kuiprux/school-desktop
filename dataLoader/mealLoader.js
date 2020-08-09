@@ -7,8 +7,8 @@ const { parse } = require('node-html-parser');
 const dataLoader = require('./dataLoader.js');
 
 
-//const mealUrl = 'http://youngsaeng.hs.kr/index.jsp?SCODE=S0000000777&mnu=M001002003001';
-const mealUrl = 'http://youngsaeng.hs.kr/index.jsp?mnu=M001002003001&SCODE=S0000000777&frame=&year=2019&month=10';
+const mealUrl = 'http://youngsaeng.hs.kr/index.jsp?SCODE=S0000000777&mnu=M001002003001';
+//const mealUrl = 'http://youngsaeng.hs.kr/index.jsp?mnu=M001002003001&SCODE=S0000000777&frame=&year=2019&month=10';
 
 const mealOptions = {
   url: mealUrl,
@@ -39,7 +39,8 @@ exports.loadData = function(reqData) {
       for (let i = 0; i < children.length; i++) {
         let tableChild = children[i];
         if(tableChild.nodeType == 3) {
-          if(tableChild.rawText.startsWith('&lt')) {
+//          if(tableChild.rawText.startsWith('&lt')) {
+          if(tableChild.rawText.startsWith('[')) {
             if(hasDinner) {
               mealIndex = 1;
             } else {

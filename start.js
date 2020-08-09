@@ -6,7 +6,7 @@ const { exec } = require('child_process');
 const path = require('path')
 
 let debugMode = false;
-debugMode = true;
+//debugMode = true;
 
 let win = null;
 let tray = null;
@@ -29,7 +29,8 @@ function createWindow () {
 
     let displays = electron.screen.getAllDisplays();
     let display = displays.find((dis) => {
-      return (dis.bounds.x !== 0 || dis.bounds.y !== 0);
+      //return (dis.bounds.x !== 0 || dis.bounds.y !== 0);
+        return (dis.bounds.x == 0 || dis.bounds.y == 0);
     })
 
     // 브라우저 창을 생성합니다.
@@ -65,7 +66,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   //win.loadFile('./web/winmain/index.html')
-  loadMode(false);
+  loadMode(true);
 
   // 개발자 도구를 엽니다.
   if(debugMode) win.webContents.openDevTools();

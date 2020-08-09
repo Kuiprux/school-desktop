@@ -64,6 +64,7 @@ window.onload = function() {
     if(curDate >= checkDate) {
       if(isSubStarted) {
         timeTableDiv.children[subIndex].classList.remove('selected');
+        if(subIndex < curTimeTable.length) timeTableDiv.children[subIndex].classList.add('done');
         subIndex++;
       } else {
         timeTableDiv.children[subIndex].classList.add('selected');
@@ -177,7 +178,7 @@ window.onload = function() {
       return hours + ':' + minutes;
     } else {
       let week = ['일', '월', '화', '수', '목', '금', '토'];
-      return date.getFullYear() + '년 ' + date.getMonth() + '월 ' + date.getDate() + '일 (' + week[date.getDay()] + ')';
+      return date.getFullYear() + '년 ' + (date.getMonth()+1) + '월 ' + date.getDate() + '일 (' + week[date.getDay()] + ')';
     }
   }
   function timeDataToDate(data, date) {
