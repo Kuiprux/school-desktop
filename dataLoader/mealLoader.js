@@ -36,10 +36,15 @@ exports.loadData = function(reqData) {
     let hasDinner = false;
     if(meal != undefined) { //if meal data exist
       let children = meal.childNodes;
+	  let shouldSkip = false;
       for (let i = 0; i < children.length; i++) {
         let tableChild = children[i];
         if(tableChild.nodeType == 3) {
 //          if(tableChild.rawText.startsWith('&lt')) {
+		  if(tableChild.rawText.startsWith('*') || shouldSkip) {
+			shouldSkip = !shouldSkip;
+		    continue;
+		  }
           if(tableChild.rawText.startsWith('[')) {
             if(hasDinner) {
               mealIndex = 1;
