@@ -46,6 +46,7 @@ function parseData(data) {
 
         if(j < subjects.length-1) {
           curTime = util.addTime(curTime, getExtraValue(restExtra, j, timing['rest-time']));
+																							console.log(getExtraValue(restExtra, j, timing['rest-time']));
         }
       }
     }
@@ -59,11 +60,11 @@ function filterInvalidDailyTimeTableData(data) {
   console.log('Validating daily time table data...');
 
   if(removeIfTimeIsInvalid(data['start-time']))
-    console.warn('start-time is discarded dur to invalid time data.');
+    console.warn('start-time is discarded due to invalid time data.');
   if(removeIfTimeIsInvalid(data['class-time']))
-    console.warn('class-time is discarded dur to invalid time data.');
+    console.warn('class-time is discarded due to invalid time data.');
   if(removeIfTimeIsInvalid(data['rest-time']))
-    console.warn('rest-time is discarded dur to invalid time data.');
+    console.warn('rest-time is discarded due to invalid time data.');
 
   if(data['extra'] != undefined) {
     let checkCode;
@@ -109,6 +110,7 @@ function discardIfTimeListIsInvalid(data) {
 }
 
 function getExtraValue(data, index, defaultValue) {
+																							console.log(data[index], util.isDef(data), util.isDef(data[index]), util.isTimeValid(data[index]));
   if(util.isDef(data) && util.isDef(data[index]) && util.isTimeValid(data[index])) {
     return data[index];
   }
