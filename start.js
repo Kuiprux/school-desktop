@@ -71,7 +71,7 @@ function createWindow () {
   // 개발자 도구를 엽니다.
   if(debugMode) win.webContents.openDevTools();
 
-  if(!debugMode) makeWallpaper(getHwnd(win));
+  //if(!debugMode) makeWallpaper(getHwnd(win));
 }
 
 function loadMode(isMain) {

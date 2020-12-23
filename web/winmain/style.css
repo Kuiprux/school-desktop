@@ -27,16 +27,16 @@ body {
     display: flex;
     align-items: center;
     font-family: 'Do Hyeon';
-    color: mediumslateblue;
+    color: #6aa31a;
     font-size: 8vh;
     transition-duration: 1s;
 }
 .subject.done {
-  color: rebeccapurple;
+  color: #608a27;
 }
 .subject.selected {
   font-size: 10vh;
-  color: mediumpurple;
+  color: #79ad31;
 }
 
 
@@ -48,7 +48,9 @@ body {
   flex-grow : 1;
   text-align: center;
   font-family: 'Do Hyeon';
-  color: cornflowerblue;
+  background: -webkit-linear-gradient(#bf3828, #2e1614);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .time {
   font-size: 30vh;
@@ -56,6 +58,7 @@ body {
 }
 .date {
   font-size: 7vh;
+  -webkit-text-fill-color: #99311f;
 }
 
 
@@ -69,12 +72,13 @@ body {
   display: flex;
 }
 .detail {
-  color: lightblue;
+  color: #4b8731;
   flex-grow: 1;
   flex-basis: 0;
   font-family: 'Do Hyeon';
   font-size: 4vh;
   overflow: hidden;
+  flex-grow: 1;
 }
 .detail .always-selected {
   color: black;
