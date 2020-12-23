@@ -1,6 +1,7 @@
 const ipcHandler = require('../rendererIpc.js');
 
-window.onload = function() {
+window.onload = init;
+function init() {
   let timeTableDiv = document.getElementById('subject-container');
 
   let timeDiv = document.getElementById('time');

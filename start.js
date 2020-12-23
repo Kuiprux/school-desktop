@@ -5,7 +5,7 @@ const os = require("os");
 const { exec } = require('child_process');
 const path = require('path')
 
-let backgroundMode = true;
+let backgroundMode = false;
 let debugMode = false;
 //debugMode = true;
 
@@ -70,7 +70,7 @@ function createWindow () {
   loadMode(true);
 
   // 개발자 도구를 엽니다.
-  if(debugMode) win.webContents.openDevTools();
+  /*if(debugMode) */win.webContents.openDevTools();
 
   if(!debugMode && backgroundMode) makeWallpaper(getHwnd(win));
 }
