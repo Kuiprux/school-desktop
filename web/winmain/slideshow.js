@@ -34,7 +34,7 @@ window.onload = function() {
   async function updateIndex() {
     let isNextSet = false;
     const files = await fs.promises.readdir('imgs');
-    if(files.length == 0) return false;
+    if(files.length == 0 || fileName != "" && files.length == 1) return false;
     if(fileName != "") {
       for (let i = 0; i < files.length; i++) {//  console.log('test1 ',i);
         if(fileName === files[i]) {
