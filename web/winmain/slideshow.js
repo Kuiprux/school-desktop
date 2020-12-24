@@ -23,7 +23,7 @@ window.onload = function() {
   update();
 
   async function update() {
-    let isNameSet = await updateIndex();
+    let isNameSet = await updateIndexRandom();
     if(isNameSet) {
       loadImage(base64_encode('imgs/'+fileName));
       showSlides();
@@ -58,6 +58,17 @@ window.onload = function() {
     fileName = files[slideIndex];
 
     //console.log(fileName);
+    return true;
+  }
+
+  async function updateIndexRandom() {
+    const files = await fs.promises.readdir('imgs');
+    if(files.length == 0 || fileName != "" && files.length == 1) return false;
+    let val = Math.floor(Math.random() * (files.length-1));
+    console.log(val, " ", slideIndex, " ", files.length);
+    if(val>=slideIndex) val++;
+    slideIndex = val;
+    fileName = files[slideIndex];
     return true;
   }
 
