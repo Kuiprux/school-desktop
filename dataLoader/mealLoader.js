@@ -7,7 +7,7 @@ const { parse } = require('node-html-parser');
 const dataLoader = require('./dataLoader.js');
 
 
-const mealUrl = 'http://youngsaeng.hs.kr/index.jsp?SCODE=S0000000777&mnu=M001002003001';
+const mealUrl = 'https://school.jbedu.kr/youngsaeng/M010501/';
 //const mealUrl = 'http://youngsaeng.hs.kr/index.jsp?mnu=M001002003001&SCODE=S0000000777&frame=&year=2019&month=10';
 
 const mealOptions = {
@@ -30,28 +30,24 @@ exports.loadData = function(reqData) {
     let root = parse(i_result);
     //console.log(root.querySelector('.t_lunch').childNodes[1].childNodes[3].childNodes[0]);
     //let meal = root.querySelector('.t_lunch > tbody > tr > td > div');
-    let meal = root.querySelector('.t_lunch').childNodes[1].childNodes[3].childNodes[0];
+    let meal = root.querySelector('.tch-lnc').childNodes[1];
     let mealData = [[], []];
     let mealIndex = 0;
     let hasDinner = false;
     if(meal != undefined) { //if meal data exist
       let children = meal.childNodes;
+	  console.log(children);
 	  let shouldSkip = false;
       for (let i = 0; i < children.length; i++) {
         let tableChild = children[i];
-        if(tableChild.nodeType == 3) {
-//          if(tableChild.rawText.startsWith('&lt')) {
-		  if(tableChild.rawText.startsWith('*') || shouldSkip) {
-			shouldSkip = !shouldSkip;
-		    continue;
-		  }
-          if(tableChild.rawText.startsWith('[')) {
-            if(hasDinner) {
-              mealIndex = 1;
-            } else {
-              hasDinner = true;
-            }
-          } else {
+		//console.log(tableChild);
+        if(tableChild.nodeType != 3) {
+		  if(tableChild.rawText == '중식' || tableChild.rawText == '[중식]')
+			continue;
+		  else if(tableChild.rawText == '석식' || tableChild.rawText == '[석식]') {
+			mealIndex = 1;
+			continue;
+		  } else {
             //logs.push(tableChild.rawText.split(/[ \(]+/)[0]);
             mealData[mealIndex].push(tableChild.rawText.split(/[ \(]+/)[0]);
           }

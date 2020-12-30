@@ -24,12 +24,12 @@ function parseData(data) {
     let innerData = [];
     let subjects = getSubjectSetting(data, i);
     let timing = getTimingSetting(data['timing'], i);
-    //  console.log(subjects);
+    //  //console.log(subjects);
 
     if(util.isDef(subjects) && util.isDef(timing)) {
       let classExtra, restExtra;
 
-    //    console.log(timing['extra']);
+    //    //console.log(timing['extra']);
       if(util.isDef(timing['extra'])) {
         classExtra = timing['extra']['class'];
         restExtra = timing['extra']['rest'];
@@ -46,18 +46,18 @@ function parseData(data) {
 
         if(j < subjects.length-1) {
           curTime = util.addTime(curTime, getExtraValue(restExtra, j, timing['rest-time']));
-																							console.log(getExtraValue(restExtra, j, timing['rest-time']));
+																							//console.log(getExtraValue(restExtra, j, timing['rest-time']));
         }
       }
     }
     newData.push(innerData);
   }
-  //console.log(newData);
+  ////console.log(newData);
   return newData;
 }
 
 function filterInvalidDailyTimeTableData(data) {
-  console.log('Validating daily time table data...');
+  //console.log('Validating daily time table data...');
 
   if(removeIfTimeIsInvalid(data['start-time']))
     console.warn('start-time is discarded due to invalid time data.');
@@ -110,7 +110,7 @@ function discardIfTimeListIsInvalid(data) {
 }
 
 function getExtraValue(data, index, defaultValue) {
-																							console.log(data[index], util.isDef(data), util.isDef(data[index]), util.isTimeValid(data[index]));
+																							//console.log(data[index], util.isDef(data), util.isDef(data[index]), util.isTimeValid(data[index]));
   if(util.isDef(data) && util.isDef(data[index]) && util.isTimeValid(data[index])) {
     return data[index];
   }
