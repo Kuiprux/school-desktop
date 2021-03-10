@@ -33,49 +33,17 @@ exports.loadData = function(reqData) {
     if(meals != undefined) { //if meal data exist
 	  switch(meals.length) {
 		case 2:
-		  mealData[1] = getMealList(meals[1]);
+		  mealData[1] = meals[1].childNodes[1].rawText.split(/\n/).map(str => str.trim().replace(/\(.+/, "")).filter(item => item);
 		case 1:
-		  mealData[0] = getMealList(meals[0]);
+		  mealData[0] = meals[0].childNodes[1].rawText.split(/\n/).map(str => str.trim().replace(/\(.+/, "")).filter(item => item);
 		  break;
 	  }
-      /*let children = meal.childNodes;
-	  console.log(children);
-	  let shouldSkip = false;
-      for (let i = 0; i < children.length; i++) {
-        let tableChild = children[i];
-		//console.log(tableChild);
-        if(tableChild.nodeType != 3) {
-		  if(tableChild.rawText == '중식' || tableChild.rawText == '[중식]')
-			continue;
-		  else if(tableChild.rawText == '석식' || tableChild.rawText == '[석식]') {
-			mealIndex = 1;
-			continue;
-		  } else {
-            //logs.push(tableChild.rawText.split(/[ \(]+/)[0]);
-            mealData[mealIndex].push(tableChild.rawText.split(/[ \(]+/)[0]);
-          }
-        }
-      }*/
+	  console.log(mealData);
     }
-    //console.log(mealData.length);
-    //log();
     dataLoader.onDataLoaded(reqData, mealData);
   });
 }
 
-function getMealList(rootDDTag) {
-	let children = rootDDTag.childNodes[1].childNodes;
-	//console.log(rootUlTag);
-			//console.log(rootUlTag.childNodes.length);
-	/*for(let i = 0; i < children.length; i++) {
-		let child = children[i];
-		console.log(i);
-        //if(child.nodeType == 1)
-			//console.log(child);
-	}*/
-	console.log(rootDDTag.childNodes[1].rawText.split(/\n/))
-
-}
 /*
 let logs = [];
 
