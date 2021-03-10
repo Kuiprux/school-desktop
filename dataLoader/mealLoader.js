@@ -6,8 +6,8 @@ const { parse } = require('node-html-parser');
 
 const dataLoader = require('./dataLoader.js');
 
-
-const mealUrl = 'https://school.jbedu.kr/youngsaeng/M010501/';
+const mealUrl = 'https://school.jbedu.kr/jjys/M01050101/';
+//const mealUrl = 'https://school.jbedu.kr/youngsaeng/M010501/';
 //const mealUrl = 'http://youngsaeng.hs.kr/index.jsp?mnu=M001002003001&SCODE=S0000000777&frame=&year=2019&month=10';
 
 const mealOptions = {
@@ -28,14 +28,17 @@ exports.loadData = function(reqData) {
     //console.log(i_result);
     //console.log(i_result);
     let root = parse(i_result);
-    //console.log(root.querySelector('.t_lunch').childNodes[1].childNodes[3].childNodes[0]);
-    //let meal = root.querySelector('.t_lunch > tbody > tr > td > div');
-    let meal = root.querySelector('.tch-lnc').childNodes[1];
+    let meals = root.querySelectorAll('.tch-lnc');
     let mealData = [[], []];
-    let mealIndex = 0;
-    let hasDinner = false;
-    if(meal != undefined) { //if meal data exist
-      let children = meal.childNodes;
+    if(meals != undefined) { //if meal data exist
+	  switch(meals.length) {
+		case 2:
+		  mealData[1] = getMealList(meals[1]);
+		case 1:
+		  mealData[0] = getMealList(meals[0]);
+		  break;
+	  }
+      /*let children = meal.childNodes;
 	  console.log(children);
 	  let shouldSkip = false;
       for (let i = 0; i < children.length; i++) {
@@ -52,12 +55,26 @@ exports.loadData = function(reqData) {
             mealData[mealIndex].push(tableChild.rawText.split(/[ \(]+/)[0]);
           }
         }
-      }
+      }*/
     }
     //console.log(mealData.length);
     //log();
     dataLoader.onDataLoaded(reqData, mealData);
   });
+}
+
+function getMealList(rootDDTag) {
+	let children = rootDDTag.childNodes[1].childNodes;
+	//console.log(rootUlTag);
+			//console.log(rootUlTag.childNodes.length);
+	/*for(let i = 0; i < children.length; i++) {
+		let child = children[i];
+		console.log(i);
+        //if(child.nodeType == 1)
+			//console.log(child);
+	}*/
+	console.log(rootDDTag.childNodes[1].rawText.split(/\n/))
+
 }
 /*
 let logs = [];
