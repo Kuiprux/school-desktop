@@ -56,7 +56,7 @@ function createWindow () {
   //tray.setContextMenu(contextMenu);
 
   mainTrayMenu = Menu.buildFromTemplate([
-    { label: 'Calendar Mode', click: swapMode },
+    { label: '30724 정종현'},
     { label: 'Quit', click: ()=>{win.close();} }
   ]);
   calTrayMenu = Menu.buildFromTemplate([
