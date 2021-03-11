@@ -43,6 +43,7 @@ exports.loadData = function(reqData) {
     dataLoader.onDataLoaded(reqData, mealData);
   });
 }
+
 /*
 let logs = [];
 
