@@ -15,7 +15,7 @@ body {
 
 .time-table {
   display: flex;
-  height: 20vh;
+  height: 14vh;
 }
 .subject-container {
   padding: 7vh 5vw;
