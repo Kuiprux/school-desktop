@@ -6,7 +6,7 @@ const { exec } = require('child_process');
 const path = require('path')
 
 let debugMode = false;
-//debugMode = true;
+debugMode = true;
 
 let win = null;
 let tray = null;

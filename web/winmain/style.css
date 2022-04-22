@@ -62,11 +62,13 @@ body {
 .details {
   display: flex;
   height: 45vh;
+  text-align: center;	
 }
 .details-container {
-  padding: 3vh 3vw;
+  padding: 3vh 16vw;
   flex-grow : 1;
   display: flex;
+  justify-content: space-around;
 }
 .detail {
   color: lightblue;
